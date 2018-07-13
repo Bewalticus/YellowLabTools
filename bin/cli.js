@@ -24,6 +24,7 @@ var cli = meow({
         '  --allow-domain       Only allow requests to given (comma-separated) domains - aka whitelist.',
         '  --no-externals       Block all domains except the main one.',
         '  --reporter           The output format: "json" or "xml". Default is "json".',
+        '  --timeout            The time to wait for loading the page in seconds. Default is 30',
         ''
     ].join('\n'),
     pkg: '../package.json'
@@ -74,6 +75,9 @@ options.authPass = cli.flags.authPass || null;
 options.blockDomain =  cli.flags.blockDomain || null;
 options.allowDomain =  cli.flags.allowDomain || null;
 options.noExternals =  cli.flags.noExternals || null;
+
+// Timeout
+options.timeout = cli.flags.timeout || 30;
 
 // Output format
 if (cli.flags.reporter && cli.flags.reporter !== 'json' && cli.flags.reporter !== 'xml') {

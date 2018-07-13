@@ -17,7 +17,8 @@ apiService.factory('API', ['$location', 'Runs', 'Results', function($location, R
                 authPass: settings.authPass,
                 blockDomain: settings.blockDomain,
                 allowedDomains: settings.allowedDomains,
-                noExternals: settings.noExternals
+                noExternals: settings.noExternals,
+                timeout: settings.timeout
             };
 
             
